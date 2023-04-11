@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/config/app_router.dart';
 
-import 'widgets/widgets.dart';
+import 'screens/screens.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(
+    appRouter: AppRouter(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AppRouter appRouter;
+  const MyApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(title: 'Zero To Unicorn'),
-      bottomNavigationBar: BottomAppBar(),
-      body: Container(),
+      onGenerateRoute: appRouter.onGenerateRoute,
     );
   }
 }
