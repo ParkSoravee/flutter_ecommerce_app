@@ -14,7 +14,7 @@ class AppRouter {
           category: routeSettings.arguments as Category,
         );
       case ProductScreen.routeName:
-        return ProductScreen.route();
+        return ProductScreen.route(product: routeSettings.arguments as Product);
       case WishlistScreen.routeName:
         return WishlistScreen.route();
       default:
