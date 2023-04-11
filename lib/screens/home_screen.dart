@@ -20,20 +20,25 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Zero To Unicorn'),
       bottomNavigationBar: const CustomNavBar(),
-      body: SizedBox(
-        child: CarouselSlider(
-          options: CarouselOptions(
-            aspectRatio: 1.5,
-            viewportFraction: 0.9, // make image wider
-            enlargeCenterPage: true,
-            enlargeStrategy: CenterPageEnlargeStrategy
-                .height, // reduce space between the cards
-            enableInfiniteScroll: false,
+      body: Column(
+        children: [
+          SizedBox(
+            child: CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 1.5,
+                viewportFraction: 0.9, // make image wider
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy
+                    .height, // reduce space between the cards
+                enableInfiniteScroll: false,
+              ),
+              items: Category.categories
+                  .map((category) => HeroCarouselCard(category: category))
+                  .toList(),
+            ),
           ),
-          items: Category.categories
-              .map((category) => HeroCarouselCard(category: category))
-              .toList(),
-        ),
+          const SectionTitle(title: 'RECOMMANDED')
+        ],
       ),
     );
   }
