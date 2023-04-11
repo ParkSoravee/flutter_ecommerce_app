@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                 enlargeCenterPage: true,
                 enlargeStrategy: CenterPageEnlargeStrategy
                     .height, // reduce space between the cards
-                enableInfiniteScroll: false,
+                // enableInfiniteScroll: false,
               ),
               items: Category.categories
                   .map((category) => HeroCarouselCard(category: category))

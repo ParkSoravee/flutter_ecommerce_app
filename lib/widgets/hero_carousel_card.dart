@@ -4,9 +4,10 @@ import 'package:flutter_ecommerce_app/screens/screens.dart';
 import '../models/models.dart';
 
 class HeroCarouselCard extends StatelessWidget {
-  final Category category;
+  final Category? category;
+  final Product? product;
 
-  const HeroCarouselCard({super.key, required this.category});
+  const HeroCarouselCard({super.key, this.category, this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +18,20 @@ class HeroCarouselCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            CatalogScreen.routeName,
-            arguments: category,
-          );
+          if (product == null) {
+            Navigator.pushNamed(
+              context,
+              CatalogScreen.routeName,
+              arguments: category,
+            );
+          }
         },
         child: ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(5.0)),
             child: Stack(
               children: <Widget>[
                 Image.network(
-                  category.imageUrl,
+                  product == null ? category!.imageUrl : product!.imageUrl,
                   fit: BoxFit.cover,
                   width: 1000.0,
                 ),
@@ -50,7 +53,7 @@ class HeroCarouselCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 20.0),
                     child: Text(
-                      category.name,
+                      product == null ? category!.name : '',
                       style: Theme.of(context)
                           .textTheme
                           .displayMedium!
