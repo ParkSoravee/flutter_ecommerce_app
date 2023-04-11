@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/widgets.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,26 +27,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Container(
-          color: Colors.black,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 10,
-          ),
-          child: const Text(
-            'Zero To Unicorn',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontFamily: 'Avenir',
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
+      appBar: const CustomAppBar(title: 'Zero To Unicorn'),
+      bottomNavigationBar: BottomAppBar(),
       body: Container(),
     );
   }
