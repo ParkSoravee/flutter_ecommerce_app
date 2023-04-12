@@ -12,13 +12,16 @@ class SplashScreen extends StatelessWidget {
   static Route route() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
-      builder: (_) => SplashScreen(),
+      builder: (_) => const SplashScreen(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 2), () => Navigator.pushNamed(context, '/'));
+    Timer(
+      const Duration(seconds: 2),
+      () => Navigator.pushReplacementNamed(context, '/'),
+    );
 
     return Scaffold(
       body: Column(
