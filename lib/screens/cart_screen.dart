@@ -62,7 +62,7 @@ class CartScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            const Cart().freeDeliveryString,
+                            state.cart.freeDeliveryString,
                             style: Theme.of(context).textTheme.headlineMedium,
                           ),
                           ElevatedButton(
@@ -104,7 +104,9 @@ class CartScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 10),
+                          horizontal: 40,
+                          vertical: 10,
+                        ),
                         child: Column(
                           children: [
                             Row(
@@ -117,7 +119,7 @@ class CartScreen extends StatelessWidget {
                                       .headlineMedium,
                                 ),
                                 Text(
-                                  '\$${const Cart().subtotalString}',
+                                  '\$${state.cart.subtotalString}',
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineMedium,
@@ -137,7 +139,7 @@ class CartScreen extends StatelessWidget {
                                       .headlineMedium,
                                 ),
                                 Text(
-                                  '\$${const Cart().deliveryFeeString}',
+                                  '\$${state.cart.deliveryFeeString}',
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineMedium,
@@ -171,7 +173,7 @@ class CartScreen extends StatelessWidget {
                                       .copyWith(color: Colors.white),
                                 ),
                                 Text(
-                                  '\$${const Cart().totalString}',
+                                  '\$${state.cart.totalString}',
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineMedium!
