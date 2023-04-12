@@ -91,9 +91,9 @@ class CartScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: const Cart().products.length,
+                      itemCount: state.cart.products.length,
                       itemBuilder: (context, index) => CartProductCard(
-                        product: const Cart().products[index],
+                        product: state.cart.products[index],
                       ),
                     ),
                   ),
