@@ -20,7 +20,8 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(
       const Duration(seconds: 2),
-      () => Navigator.pushReplacementNamed(context, '/'),
+      // () => Navigator.pushReplacementNamed(context, '/'),
+      () => Navigator.pop(context),
     );
 
     return Scaffold(
