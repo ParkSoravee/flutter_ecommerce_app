@@ -7,7 +7,9 @@ import 'package:flutter_ecommerce_app/bloc/wishlist/wishlist_bloc.dart';
 import 'package:flutter_ecommerce_app/config/app_router.dart';
 import 'package:flutter_ecommerce_app/config/theme.dart';
 
+import 'bloc/product/product_bloc.dart';
 import 'repositories/category/category_repository.dart';
+import 'repositories/product/product_repository.dart';
 import 'screens/screens.dart';
 
 Future<void> main() async {
@@ -34,6 +36,9 @@ class MyApp extends StatelessWidget {
             create: (_) =>
                 CategoryBloc(categoryRepository: CategoryRepository())
                   ..add(LoadCategories())),
+        BlocProvider(
+            create: (_) => ProductBloc(productRepository: ProductRepository())
+              ..add(LoadProducts())),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
