@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
 class Product extends Equatable {
-  final String id;
+  // final String id;
   final String name;
   final String category;
   final String imageUrl;
@@ -11,7 +11,7 @@ class Product extends Equatable {
   final bool isPopular;
 
   const Product({
-    required this.id,
+    // required this.id,
     required this.name,
     required this.category,
     required this.imageUrl,
@@ -22,7 +22,7 @@ class Product extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
+        // id,
         name,
         category,
         imageUrl,
@@ -33,7 +33,7 @@ class Product extends Equatable {
 
   static Product fromSnapshot(DocumentSnapshot snap) {
     return Product(
-      id: snap['id'],
+      // id: snap['id'],
       name: snap['name'],
       category: snap['category'],
       imageUrl: snap['imageUrl'],
@@ -45,7 +45,7 @@ class Product extends Equatable {
 
   static List<Product> products = const [
     Product(
-      id: '1',
+      // id: '1',
       name: 'Soft Drink #1',
       category: 'Soft Drinks',
       imageUrl:
@@ -55,7 +55,7 @@ class Product extends Equatable {
       isPopular: false,
     ),
     Product(
-      id: '2',
+      // id: '2',
       name: 'Soft Drink #2',
       category: 'Soft Drinks',
       imageUrl:
@@ -65,7 +65,7 @@ class Product extends Equatable {
       isPopular: true,
     ),
     Product(
-      id: '3',
+      // id: '3',
       name: 'Soft Drink #3',
       category: 'Soft Drinks',
       imageUrl:
@@ -75,7 +75,7 @@ class Product extends Equatable {
       isPopular: true,
     ),
     Product(
-      id: '4',
+      // id: '4',
       name: 'Smoothies #1',
       category: 'Smoothies',
       imageUrl:
@@ -85,7 +85,7 @@ class Product extends Equatable {
       isPopular: false,
     ),
     Product(
-      id: '5',
+      // id: '5',
       name: 'Smoothies #2',
       category: 'Smoothies',
       imageUrl:
